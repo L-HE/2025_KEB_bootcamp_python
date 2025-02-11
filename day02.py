@@ -5,9 +5,10 @@ def is_prime(number) -> bool:
     :param num: integer number
     :return: boolean type
     """
+
     if number >= 2:
         i = 2
-        while i <= int(number**0.5) :
+        while i <= int(pow(number, 0.5)) :
             if number % i == 0:
                 return False
             i = i + 1
@@ -15,19 +16,12 @@ def is_prime(number) -> bool:
         return False
     return True
 
-# main
-numbers = input("Input first second number : ").split()
-n1 = int(numbers[0])
-n2 = int(numbers[1])
+#main
+help(is_prime)
 
-#packing, unpacking
-if n1 > n2:
-    n1, n2 = n2, n1
-if n1 < 2 :
-    print("Cannot find prime number.")
+number = int(input ("Input number: "))
+
+if is_prime(number):
+    print(f"{number} is prime number")
 else:
-    number = n1
-    while number <= n2:
-        if is_prime(number):
-           print(number, end=' ')
-        number = number + 1
+    print(f"{number} is NOT prime number")
