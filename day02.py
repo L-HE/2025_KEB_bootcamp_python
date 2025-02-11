@@ -1,24 +1,20 @@
-def is_prime(number) -> bool:
-    """
-    A function that determines whether a prime number is present
-    and returns True if it is a prime number and False if it is not a prime number
-    :param num: integer number
-    :return: boolean type
-    """
-    if number >= 2:
-        for i in range(2, int(number**0.5) + 1):          #n**0.5 => n의 0.5제곱
-            if number % i == 0:
-                return False
-    else:
-        return False
-    return True
+univ = "Inha university"
+# print(univ)
+# print(univ[5])
+# univ[5] = 'U' #immutable : 가변의
 
-# main
-help(is_prime)
+# print(univ)
+# subjects = ['python', 'c++', 'linux', 'data structure', 'database']
+# print(subjects)
+# print(subjects[3])
+# subjects[3] = 'data structure & algorithm' # mutable
+# print(subjects)
 
-number = int(input ("Input number: "))
-
-if is_prime(number):
-    print(f"{number} is prime number")
-else:
-    print(f"{number} is NOT prime number")
+print(0.1)
+print(1e-1)
+print(0.01)
+print(1e-2)
+print(314.1592)
+print(0.3141592e3)
+print(21000)
+print(21_000)
