@@ -1,14 +1,17 @@
-n = int(input ("Input number: "))
+import math
+
+number = int(input ("Input number: "))
 is_prime = True
-if n >= 2:
-    for i in range(2, n):
-        if n % i == 0:
+if number >= 2:
+    for i in range(2, int(math.sqrt(number)) + 1):          #n**0.5 => n의 0.5제곱
+        if number % i == 0:
             is_prime = False            #count = count + 1
-            break
+            break                       #숫자가 커질수록 break의 의미가 커진다
+        print(i, end=' ')
 else:
     is_prime = False
 
 if is_prime:                            #if count == 0:
-    print(f"{n} is prime number")
+    print(f"{number} is prime number")
 else:
-    print(f"{n} is NOT prime number")
+    print(f"{number} is NOT prime number")
