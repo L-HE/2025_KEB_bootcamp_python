@@ -16,11 +16,18 @@ def is_prime(number) -> bool:
     return True
 
 # main
-help(is_prime)
+numbers = input("Input first second number : ").split()
+n1 = int(numbers[0])
+n2 = int(numbers[1])
 
-number = int(input ("Input number: "))
-
-if is_prime(number):
-    print(f"{number} is prime number")
+#packing, unpacking
+if n1 > n2:
+    n1, n2 = n2, n1
+if n1 < 2 :
+    print("Cannot find prime number.")
 else:
-    print(f"{number} is NOT prime number")
+    number = n1
+    while number <= n2:
+        if is_prime(number):
+           print(number, end=' ')
+        number = number + 1
