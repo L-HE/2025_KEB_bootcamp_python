@@ -1,18 +1,26 @@
-univ = "Inha university"
-print(univ)
-print(univ[5])
-# univ[5] = 'U'  # immutable
-# print(univ)
-subjects = ['python', 'c++', 'linux', 'data structure', 'database']
-print(subjects)
-print(subjects[3])
-subjects[3] = 'data structure & algorithm'  # mutable
-print(subjects)
-# print(0.1)
-# print(1e-1)
-# print(0.01)
-# print(1e-2)
-# print(314.1592)
-# print(0.3141592e3)
-# print(21000)
-# print(21_000)
+def is_prime(number) -> bool:
+    """
+    A function that determines whether a prime number is present
+    and returns True if it is a prime number and False if it is not a prime number
+    :param num: integer number
+    :return: boolean type
+    """
+    if number >= 2:
+        i = 2
+        while i <= int(number**0.5) :
+            if number % i == 0:
+                return False
+            i = i + 1
+    else:
+        return False
+    return True
+
+# main
+help(is_prime)
+
+number = int(input ("Input number: "))
+
+if is_prime(number):
+    print(f"{number} is prime number")
+else:
+    print(f"{number} is NOT prime number")
