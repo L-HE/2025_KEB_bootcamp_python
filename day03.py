@@ -1,39 +1,29 @@
-# Assignment Day 02
-# v1.4) Make my_pow custom function instead of ** operator, power function and make it work.
-import math
+names = ['LHE', 'LHN', 'LS', 'NHS', 'LSY']
+# for i in range(len(names)):
+#     print(f"Hello, {names[i]}.")
+#
+# print(f"{names[3]} can't come to party.")
+#
+# names[3] = 'NHY'
+#
+# for i in range(len(names)):
+#     print(f"Hello, {names[i]}.")
+
+# print("We found more bigger table.")
+
+names.insert(0, 'osr')
+names.insert(2, 'itm')
+names.append('psc')
+
+# for i in range(len(names)):
+#     print(f"Hello, {names[i]}.")
+
+print("I'm sorry to say we can apply only two people.")
+
+for i in range(len(names) - 2):
+    print(f"{names.pop()} sir, I'm sorry")
 
 
-def my_pow(b, e) -> float:
-    """
-    A user-defined function that receives a base and exponent and returns the power result in the form of a real number
-    :param b: base number
-    :param e: exponent
-    :return: the power result in the form of a real number
-    """
-    if e < 0:
-        b = 1 / b
-        e = e * -1
 
-    result = 1
-
-    i = int(e)
-    f = e - i
-
-    for _ in range(i):  # for k in range(e):
-        result = result * b
-
-    if f > 0:
-        result = result * math.exp(f * math.log(b))
-
-    return result
-
-
-print(my_pow(10, -2))
-print(my_pow(2, 9))
-print(my_pow(16, 0.5))
-print(my_pow(10, 3))
-print(my_pow(25, 0.5))  # ieee 754
-
-# print(math.exp(1))
-# print(math.e)
-# print(math.log(16, 2))
+# lists = ['오토바이', '자동차', '자전거', '킥보드']
+# print(f"나는 혼다 {lists[1]}를(을) 가지고 싶습니다.")
