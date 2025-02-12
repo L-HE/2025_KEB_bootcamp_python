@@ -1,5 +1,7 @@
 #4 Make my_pow custom function instead of ** operator, power function and make it work
 #from wsgiref.util import request_uri
+import math
+
 
 def my_pow(b, e) -> float:
     """
@@ -8,9 +10,21 @@ def my_pow(b, e) -> float:
     :param e: exponent
     :return: the power result in the form of the real number
     """
+    if e < 0:
+        b = 1 / b
+        e = e * -1
+
     result = 1
-    for k in range(e):
+
+    i = int(e)
+    f = e - i
+
+    for _ in range(i):  # for k in range(e):
         result = result * b
+
+    if f > 0:
+        result = result * math.exp(f * math.log(b))
+
     return result
 
 
