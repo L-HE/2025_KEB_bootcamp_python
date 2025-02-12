@@ -34,3 +34,5 @@ while True:
     elif menu == len(drinks) + 2:
         print(f'다음에 또 오세요')
         break
+    else:
+        print(f'잘못 입력하셨습니다. 다시 입력해주세요.\n')
