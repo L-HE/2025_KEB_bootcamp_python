@@ -1,54 +1,23 @@
 # Assignment
-# v2.7) 2중 데코레이터 적용. time_decorator + description_decorator -> factorial 함수에 적용.
+#
 
-#시간을 기록할 수 있는 모듈
-import  time
+def log_decorator(func):
+    def wrapper(*args,**kwargs):
+        print(f'Function Name: {func.__name__}')
+        print(f'Function Arguments: {args}')                #tuple
+        print(f'Function Keyword Arguments: {kwargs}')      #dict
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
 
-
-def description_decorator(func):
-    """
-    dd
-    """
-    def inner(*arg):
-        """
-        inner
-        """
-        print(func.__name__)
-        print(func.__doc__)
-        r = func(*arg)
-        return r
-    return inner
+@log_decorator
+#default 매개변수 : default 값을 지정한 매개변수
+def greet(name, greeting = "안녕하세요", age = None):
+    return f"{greeting}, {name}(age: {age})" if age else f"{greeting}, {name}"
 
 
-def time_decorator(func):
-    """
-    td
-    """
-    def wrapper(*arg):
-        """
-        wrapper
-        """
-        s = time.time()
-        r = func(*arg)
-        e = time.time()
-        print(f'duration time: {e - s}sec')
-        return r
-    return  wrapper
-
-
-# @time_decorator
-# @description_decorator
-def factorial_repetition(num) -> int :
-    """
-    f_r
-    """
-    result = 1
-    for i in range(2, num + 1):
-        result = result * i
-    return result
-
-number = int(input())
-dd = time_decorator(description_decorator(factorial_repetition))
-print(f"{number}! = {dd(number)}")
-# print(f"{number}! = {factorial_repetition(number)}")
-
+print(greet("인하"))
+print(greet("인상", "안녕"))
+print(greet("James","Hello"))
+print(greet("Gonzales",greeting = "Hola"))          #key=value type
+print(greet("Nakamura",greeting = "konnichiwa", age=29))
