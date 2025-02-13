@@ -36,8 +36,8 @@ def time_decorator(func):
     return  wrapper
 
 
-@time_decorator
-@description_decorator
+# @time_decorator
+# @description_decorator
 def factorial_repetition(num) -> int :
     """
     f_r
@@ -48,7 +48,7 @@ def factorial_repetition(num) -> int :
     return result
 
 number = int(input())
-# dd = description_decorator(time_decorator(factorial_repetition))
-# print(f"{number}! = {dd(number)}")
-print(f"{number}! = {factorial_repetition(number)}")
+dd = time_decorator(description_decorator(factorial_repetition))
+print(f"{number}! = {dd(number)}")
+# print(f"{number}! = {factorial_repetition(number)}")
 
