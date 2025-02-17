@@ -1,21 +1,21 @@
-# Assignment01
-# v3.0) Countdown
+# Assignment02
+# v3.1) Factorial
 
-def countdown_loop(num):
-    for i in range(num + 1):
-        if (num - i) != 0:
-            print(num - i)
-        else:
-            print("Boom")
 
-def countdown_recursion(num):
+def factorial_loop(num) -> int:
+    answer = 1
+    for i in range(2, num + 1):
+        answer = answer * i
+    return answer
+
+
+def factorial_recursion(num) -> int:
     if num == 0:
-        print("Boom")
+        return 1
     else:
-        print(num)
-        return countdown_recursion(num - 1)
+        return num * factorial_recursion(num - 1)
 
 
-num = int(input('Press a number that you want to countdown: '))
-countdown_loop(num)
-countdown_recursion(num)
+num = int(input('Insert a number: '))
+print(f'{num}! = {factorial_loop(num)}')
+print(f'{num}! = {factorial_recursion(num)}')
